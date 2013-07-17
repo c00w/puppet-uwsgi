@@ -21,6 +21,9 @@ class uwsgi {
             Package["uWSGI"],
             File["/etc/init/uwsgi.conf"]
         ],
+        subscribe => [
+            Class["observatory"],
+        ],
         ensure  => running,
         enable  => true,
     }
