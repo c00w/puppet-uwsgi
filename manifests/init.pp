@@ -5,8 +5,6 @@ class uwsgi {
     }
 
     package {
-        "python-pip":
-            ;
         "python-dev":
             ;
         "uWSGI":
@@ -26,6 +24,4 @@ class uwsgi {
         ensure  => running,
         enable  => true,
     }
-
-    Package["python-pip"] -> Package["uWSGI"]
 }
