@@ -5,21 +5,17 @@ class uwsgi {
     }
 
     package {
-        "python-pip";
-        "python-dev";
+        "python-pip":
+            ;
+        "python-dev":
+            ;
         "uWSGI":
             provider    => "pip";
-
-    }
-
-    package {"uWSGI":
-        provider => "pip",
-        ensure  => latest,
     }
 
     file {"/etc/init/uwsgi.conf":
         ensure  => present,
-        source  => "puppet:///modules/uwsi/init/uwsgi.conf"
+        source  => "puppet:///modules/uwsgi/init/uwsgi.conf"
     }
 
     service {"uwsgi":
