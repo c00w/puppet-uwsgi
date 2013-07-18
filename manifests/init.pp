@@ -5,8 +5,6 @@ class uwsgi {
     }
 
     package {
-        "python-dev":
-            ;
         "uWSGI":
             provider    => "pip";
     }
